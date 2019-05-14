@@ -12,7 +12,7 @@ class Temperature(models.Model):
         return f"({self.value}, {self.location})"
 
     def detail_updated_at(self):
-        return self.created_at.strftime(self.DATETIME_FORMAT)
+        return self.updated_at.strftime(self.DATETIME_FORMAT)
 
     def detail_created_at(self):
         return self.created_at.strftime(self.DATETIME_FORMAT)
