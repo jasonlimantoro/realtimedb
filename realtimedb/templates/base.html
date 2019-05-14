@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Django App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
 </head>
 <body>
   {% if messages %}
@@ -12,7 +13,26 @@
     <hr>
   {% endif %}
 
-  {% block content %}
-  {% endblock %}
+  <div class="ui container">
+    {% block content %}
+    {% endblock %}
+  </div>
+  <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"
+  >
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+  <script>
+    $('.message .close')
+      .on('click', function() {
+        $(this)
+          .closest('.message')
+          .transition('fade')
+        ;
+      })
+    ;
+  </script>
 </body>
 </html>

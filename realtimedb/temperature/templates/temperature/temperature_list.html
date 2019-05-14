@@ -2,7 +2,24 @@
 
 {% block content %}
   <h1>Temperature list</h1>
-  <table>
+  <div class="ui info message">
+    <div class="header">
+      Info
+    </div>
+    <p>
+      The temperature list will be updated every 10 seconds.
+    </p>
+    <p>
+      Click Refresh to see updates
+    </p>
+    <a href="{% url 'temperature_list' %}">
+      <button class="ui primary button">
+        <i class="undo icon"></i>
+        Refresh
+      </button>
+    </a>
+  </div>
+  <table class='ui celled table' style="table-layout: fixed;">
     <thead>
       <tr>
         <th>Location</th>
