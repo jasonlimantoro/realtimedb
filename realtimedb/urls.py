@@ -14,11 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from realtimedb.core import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('core/generate', views.GenerateRandomUserView.as_view(), name='generate'),
     path('core/list', views.UsersListView.as_view(), name='users_list'),
+    path('temperatures/', include('realtimedb.temperature.urls'))
 ]
