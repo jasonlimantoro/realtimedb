@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from realtimedb.core import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('core/generate', views.GenerateRandomUserView.as_view(), name='generate'),
+    path('core/list', views.UsersListView.as_view(), name='users_list'),
 ]
