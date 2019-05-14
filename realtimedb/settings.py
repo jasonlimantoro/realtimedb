@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'realtimedb.core',
     'realtimedb.temperature',
+    'django_seed'
 ]
 
 MIDDLEWARE = [
