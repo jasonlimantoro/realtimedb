@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Temperature list</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Location</th>
+        <th>Value</th>
+        <th>Last Modified</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for temperature in object_list %}
+        <tr>
+          <td>{{ temperature.location }}</td>
+          <td>{{ temperature.value }}</td>
+          <td>{{ temperature.detail_updated_at }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}
