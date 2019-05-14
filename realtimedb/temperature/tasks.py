@@ -20,7 +20,6 @@ def update_temperature():
     updated = []
     for temperature in Temperature.objects.all():
         diff = uniform(-1, 1)
-        logger.info(diff)
         temperature.value = round(temperature.value + diff, 2)
         temperature.save()
         updated.append(temperature)
